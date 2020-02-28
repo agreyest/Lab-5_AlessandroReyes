@@ -43,6 +43,7 @@ public class Principal extends javax.swing.JFrame {
         jmi_crearV = new javax.swing.JMenuItem();
         jmi_listarV = new javax.swing.JMenuItem();
         jmi_csuperpoder = new javax.swing.JMenuItem();
+        jmi_agregarp = new javax.swing.JMenuItem();
         jmi_listanos = new javax.swing.JMenuItem();
         jmi_listanov = new javax.swing.JMenuItem();
         jmi_atrapar = new javax.swing.JMenuItem();
@@ -54,14 +55,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jd_novillano = new javax.swing.JDialog();
         jScrollPane3 = new javax.swing.JScrollPane();
         jl_novillano = new javax.swing.JList<>();
         jLabel5 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jd_crearSV = new javax.swing.JDialog();
         jLabel6 = new javax.swing.JLabel();
         tf_Cnom_ = new javax.swing.JTextField();
@@ -105,6 +104,17 @@ public class Principal extends javax.swing.JFrame {
         jl_escapar = new javax.swing.JList<>();
         btn_escapar_r = new javax.swing.JButton();
         btn_escapar = new javax.swing.JButton();
+        jd_agregarp = new javax.swing.JDialog();
+        btn_pod_r = new javax.swing.JButton();
+        btn_podV = new javax.swing.JButton();
+        btn_podS = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        cb_podS = new javax.swing.JComboBox<>();
+        cb_podV = new javax.swing.JComboBox<>();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jl_superpoderes = new javax.swing.JList<>();
+        jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tf_user = new javax.swing.JTextField();
@@ -168,6 +178,14 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jmi_csuperpoder);
 
+        jmi_agregarp.setText("Agregarle poderes a s o v");
+        jmi_agregarp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_agregarpActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmi_agregarp);
+
         jmi_listanos.setText("Lista superheroe sin grupo");
         jMenu1.add(jmi_listanos);
 
@@ -229,8 +247,6 @@ public class Principal extends javax.swing.JFrame {
 
         jButton2.setText("agregar a un grupo");
 
-        jButton3.setText("Agregar superpoder ");
-
         javax.swing.GroupLayout jd_nosuperLayout = new javax.swing.GroupLayout(jd_nosuper.getContentPane());
         jd_nosuper.getContentPane().setLayout(jd_nosuperLayout);
         jd_nosuperLayout.setHorizontalGroup(
@@ -239,14 +255,13 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(254, 254, 254)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
-                .addComponent(jButton3))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jd_nosuperLayout.createSequentialGroup()
                 .addGap(188, 188, 188)
                 .addGroup(jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         jd_nosuperLayout.setVerticalGroup(
             jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,8 +273,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)))
+                    .addComponent(jButton2)))
         );
 
         jl_novillano.setModel(new DefaultListModel());
@@ -271,8 +285,6 @@ public class Principal extends javax.swing.JFrame {
 
         jButton5.setText("Agregar a un grupo");
 
-        jButton6.setText("Darle superpoderes");
-
         javax.swing.GroupLayout jd_novillanoLayout = new javax.swing.GroupLayout(jd_novillano.getContentPane());
         jd_novillano.getContentPane().setLayout(jd_novillanoLayout);
         jd_novillanoLayout.setHorizontalGroup(
@@ -282,13 +294,12 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jd_novillanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(237, Short.MAX_VALUE))
             .addGroup(jd_novillanoLayout.createSequentialGroup()
                 .addComponent(jButton4)
                 .addGap(276, 276, 276)
                 .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
-                .addComponent(jButton6))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jd_novillanoLayout.setVerticalGroup(
             jd_novillanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,8 +311,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(jd_novillanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)))
+                    .addComponent(jButton5)))
         );
 
         jLabel6.setText("Nombre ");
@@ -610,6 +620,84 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jd_escaparLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_escapar_r)
                     .addComponent(btn_escapar)))
+        );
+
+        btn_pod_r.setText("Regresar");
+        btn_pod_r.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_pod_rMouseClicked(evt);
+            }
+        });
+
+        btn_podV.setText("Agregar poder a un villano");
+        btn_podV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_podVMouseClicked(evt);
+            }
+        });
+
+        btn_podS.setText("Agregar al heroe un poder");
+        btn_podS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_podSMouseClicked(evt);
+            }
+        });
+
+        jLabel14.setText("Lista de superheroes");
+
+        jLabel15.setText("Lista de villanos");
+
+        jl_superpoderes.setModel(new DefaultListModel());
+        jScrollPane9.setViewportView(jl_superpoderes);
+
+        jLabel16.setText("Superpoderes");
+
+        javax.swing.GroupLayout jd_agregarpLayout = new javax.swing.GroupLayout(jd_agregarp.getContentPane());
+        jd_agregarp.getContentPane().setLayout(jd_agregarpLayout);
+        jd_agregarpLayout.setHorizontalGroup(
+            jd_agregarpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_agregarpLayout.createSequentialGroup()
+                .addComponent(btn_pod_r)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                .addComponent(btn_podV)
+                .addGap(182, 182, 182)
+                .addComponent(btn_podS))
+            .addGroup(jd_agregarpLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(jd_agregarpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cb_podS, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jd_agregarpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cb_podV, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addGap(70, 70, 70))
+            .addGroup(jd_agregarpLayout.createSequentialGroup()
+                .addGap(201, 201, 201)
+                .addGroup(jd_agregarpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_agregarpLayout.setVerticalGroup(
+            jd_agregarpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_agregarpLayout.createSequentialGroup()
+                .addGroup(jd_agregarpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_agregarpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_podS, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_podV, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jd_agregarpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_pod_r)
+                    .addComponent(btn_podV)
+                    .addComponent(btn_podS)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1015,6 +1103,175 @@ public class Principal extends javax.swing.JFrame {
         jd_stanlee.setVisible(true);
     }//GEN-LAST:event_btn_escapar_rMouseClicked
 
+    private void jmi_agregarpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarpActionPerformed
+        jd_stanlee.setModal(false);
+        jd_stanlee.setVisible(false);
+        jd_agregarp.setModal(true);
+        jd_agregarp.pack();
+        jd_agregarp.setLocationRelativeTo(this);
+        jd_agregarp.setVisible(true);
+        
+        DefaultListModel m = (DefaultListModel) jl_superpoderes.getModel();
+        for (int i = 0; i < poderes.size(); i++) {
+            m.addElement(poderes.get(i).toString());
+        }
+        jl_superpoderes.setModel(m);
+        
+        ArrayList<Villano> temp = new ArrayList();
+        for (int i = 0; i < darkavenger.size(); i++) {
+            if(darkavenger.get(i).getPoderesv().size()<3)
+                temp.add(darkavenger.get(i));
+        }
+        for (int i = 0; i < sinister.size(); i++) {
+            if(sinister.get(i).getPoderesv().size()<3)
+                temp.add(sinister.get(i));
+        }
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel(temp.toArray());
+        cb_podV.setModel(modelo);
+        
+        ArrayList<Superheroe> temp1 = new ArrayList();
+        for (int i = 0; i < vengadores.size(); i++) {
+            if(vengadores.get(i).getPoderes().size()<3)
+                temp1.add(vengadores.get(i));
+        }
+        for (int i = 0; i < xmen.size(); i++) {
+            if(xmen.get(i).getPoderes().size()<3)
+                temp1.add(xmen.get(i));
+        }
+        DefaultComboBoxModel mod = new DefaultComboBoxModel(temp1.toArray());
+        cb_podS.setModel(mod);
+    }//GEN-LAST:event_jmi_agregarpActionPerformed
+
+    private void btn_podVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_podVMouseClicked
+        boolean ver = false;
+        if(jl_superpoderes.getSelectedIndex()>=0){
+            Villano temp = (Villano) cb_podV.getSelectedItem();
+
+            for (int i = 0; i < darkavenger.size(); i++) {
+                if (temp.equals(darkavenger.get(i))) {
+                    darkavenger.get(i).getPoderesv().add(poderes.get(jl_superpoderes.getSelectedIndex()));
+                    
+                    if (temp.getPoderesv().size() == 3) {
+                        ArrayList<Villano> tem = new ArrayList();
+                        for (int j = 0; j < darkavenger.size(); j++) {
+                            if (darkavenger.get(j).getPoderesv().size() < 3) {
+                                tem.add(darkavenger.get(j));
+                            }
+                        }
+                        for (int j = 0; j < sinister.size(); j++) {
+                            if (sinister.get(j).getPoderesv().size() < 3) {
+                                tem.add(sinister.get(j));
+                            }
+                        }
+                        DefaultComboBoxModel modelo = new DefaultComboBoxModel(tem.toArray());
+                    }
+                        
+                    JOptionPane.showMessageDialog(jd_agregarp, "Poder al villano agregado con exito");
+                    ver = true;
+                    break;
+                }
+            }
+            if (!ver) {
+                for (int i = 0; i < sinister.size(); i++) {
+                    if (temp.equals(sinister.get(i))) {
+                        sinister.get(i).getPoderesv().add(poderes.get(jl_superpoderes.getSelectedIndex()));
+
+                        if (temp.getPoderesv().size() == 3) {
+                            ArrayList<Villano> tem = new ArrayList();
+                            for (int j = 0; j < darkavenger.size(); j++) {
+                                if (darkavenger.get(j).getPoderesv().size() < 3) {
+                                    tem.add(darkavenger.get(j));
+                                }
+                            }
+                            for (int j = 0; j < sinister.size(); j++) {
+                                if (sinister.get(j).getPoderesv().size() < 3) {
+                                    tem.add(sinister.get(j));
+                                }
+                            }
+                            DefaultComboBoxModel modelo = new DefaultComboBoxModel(tem.toArray());
+                        }
+
+                        JOptionPane.showMessageDialog(jd_agregarp, "Poder al villano agregado con exito");
+                        ver = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_btn_podVMouseClicked
+
+    private void btn_podSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_podSMouseClicked
+        boolean ver = false;
+        if(jl_superpoderes.getSelectedIndex()>=0){
+            Superheroe temp = (Superheroe) cb_podS.getSelectedItem();
+
+            for (int i = 0; i < vengadores.size(); i++) {
+                if (temp.equals(vengadores.get(i))) {
+                    vengadores.get(i).getPoderes().add(poderes.get(jl_superpoderes.getSelectedIndex()));
+                    
+                    if (temp.getPoderes().size() == 3) {
+                        ArrayList<Superheroe> tem = new ArrayList();
+                        for (int j = 0; j < vengadores.size(); j++) {
+                            if (vengadores.get(j).getPoderes().size() < 3) {
+                                tem.add(vengadores.get(j));
+                            }
+                        }
+                        for (int j = 0; j < xmen.size(); j++) {
+                            if (xmen.get(j).getPoderes().size() < 3) {
+                                tem.add(xmen.get(j));
+                            }
+                        }
+                        DefaultComboBoxModel modelo = new DefaultComboBoxModel(tem.toArray());
+                    }
+                        
+                    JOptionPane.showMessageDialog(jd_agregarp, "Poder al superheroe agregado con exito");
+                    ver = true;
+                    break;
+                }
+            }
+            if (!ver) {
+                for (int i = 0; i < xmen.size(); i++) {
+                    if (temp.equals(xmen.get(i))) {
+                        xmen.get(i).getPoderes().add(poderes.get(jl_superpoderes.getSelectedIndex()));
+
+                        if (temp.getPoderes().size() == 3) {
+                            ArrayList<Superheroe> tem = new ArrayList();
+                            for (int j = 0; j < vengadores.size(); j++) {
+                                if (vengadores.get(j).getPoderes().size() < 3) {
+                                    tem.add(vengadores.get(j));
+                                }
+                            }
+                            for (int j = 0; j < xmen.size(); j++) {
+                                if (xmen.get(j).getPoderes().size() < 3) {
+                                    tem.add(xmen.get(j));
+                                }
+                            }
+                            DefaultComboBoxModel modelo = new DefaultComboBoxModel(tem.toArray());
+                        }
+
+                        JOptionPane.showMessageDialog(jd_agregarp, "Poder al superheroe agregado con exito");
+                        ver = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_btn_podSMouseClicked
+
+    private void btn_pod_rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pod_rMouseClicked
+        DefaultListModel m = (DefaultListModel) jl_superpoderes.getModel();
+        m.removeAllElements();
+        jl_superpoderes.setModel(m);
+        
+        jd_stanlee.setModal(false);
+        jd_stanlee.setVisible(false);
+        jd_agregarp.setModal(true);
+        jd_agregarp.pack();
+        jd_agregarp.setLocationRelativeTo(this);
+        jd_agregarp.setVisible(true);
+
+    }//GEN-LAST:event_btn_pod_rMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1063,18 +1320,24 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_especial;
     private javax.swing.JButton btn_listavs_r_;
     private javax.swing.JButton btn_login;
+    private javax.swing.JButton btn_podS;
+    private javax.swing.JButton btn_podV;
+    private javax.swing.JButton btn_pod_r;
     private javax.swing.JComboBox<String> cb_heroe;
+    private javax.swing.JComboBox<String> cb_podS;
+    private javax.swing.JComboBox<String> cb_podV;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1091,6 +1354,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JDialog jd_agregarp;
     private javax.swing.JDialog jd_atrapar;
     private javax.swing.JDialog jd_crearSP;
     private javax.swing.JDialog jd_crearSV;
@@ -1104,7 +1369,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JList<String> jl_listaSV;
     private javax.swing.JList<String> jl_nosuper;
     private javax.swing.JList<String> jl_novillano;
+    private javax.swing.JList<String> jl_superpoderes;
     private javax.swing.JMenu jm_villano;
+    private javax.swing.JMenuItem jmi_agregarp;
     private javax.swing.JMenuItem jmi_atrapar;
     private javax.swing.JMenuItem jmi_crearS;
     private javax.swing.JMenuItem jmi_crearV;
