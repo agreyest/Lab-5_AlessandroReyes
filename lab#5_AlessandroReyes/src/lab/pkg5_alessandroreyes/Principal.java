@@ -86,6 +86,12 @@ public class Principal extends javax.swing.JFrame {
         rb_msi_ = new javax.swing.JRadioButton();
         rb_mno_ = new javax.swing.JRadioButton();
         bg_mortal = new javax.swing.ButtonGroup();
+        jd_listaSV = new javax.swing.JDialog();
+        lab_Sgrupo = new javax.swing.JLabel();
+        lab_Vgrupo = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jl_listaSV = new javax.swing.JList<>();
+        btn_listavs_r_ = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tf_user = new javax.swing.JTextField();
@@ -112,6 +118,11 @@ public class Principal extends javax.swing.JFrame {
         m_superheroe.add(jmi_crearS);
 
         jmi_listarS.setText("Listar");
+        jmi_listarS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_listarSActionPerformed(evt);
+            }
+        });
         m_superheroe.add(jmi_listarS);
 
         jMenu1.add(m_superheroe);
@@ -127,6 +138,11 @@ public class Principal extends javax.swing.JFrame {
         jm_villano.add(jmi_crearV);
 
         jmi_listarV.setText("Listar");
+        jmi_listarV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_listarVActionPerformed(evt);
+            }
+        });
         jm_villano.add(jmi_listarV);
 
         jMenu1.add(jm_villano);
@@ -433,6 +449,50 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btn_CrearSP_, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        lab_Sgrupo.setText("Lista de superheroes ya en su grupo");
+
+        lab_Vgrupo.setText("Lista de villanos ya en su grupo");
+
+        jl_listaSV.setModel(new DefaultListModel());
+        jScrollPane4.setViewportView(jl_listaSV);
+
+        btn_listavs_r_.setText("Regresar");
+        btn_listavs_r_.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_listavs_r_MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_listaSVLayout = new javax.swing.GroupLayout(jd_listaSV.getContentPane());
+        jd_listaSV.getContentPane().setLayout(jd_listaSVLayout);
+        jd_listaSVLayout.setHorizontalGroup(
+            jd_listaSVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listaSVLayout.createSequentialGroup()
+                .addGroup(jd_listaSVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_listaSVLayout.createSequentialGroup()
+                        .addGap(295, 295, 295)
+                        .addGroup(jd_listaSVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lab_Vgrupo)
+                            .addComponent(lab_Sgrupo)))
+                    .addGroup(jd_listaSVLayout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_listavs_r_))
+                .addContainerGap(180, Short.MAX_VALUE))
+        );
+        jd_listaSVLayout.setVerticalGroup(
+            jd_listaSVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listaSVLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(lab_Sgrupo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lab_Vgrupo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(btn_listavs_r_))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -603,6 +663,64 @@ public class Principal extends javax.swing.JFrame {
         rb_mno_.setSelected(true);
     }//GEN-LAST:event_btn_CrearSP_r_MouseClicked
 
+    private void jmi_listarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarSActionPerformed
+        jd_stanlee.setModal(false);
+        jd_stanlee.setVisible(false);
+        jd_listaSV.setModal(true);
+        jd_listaSV.pack();
+        jd_listaSV.setLocationRelativeTo(this);
+        jd_listaSV.setVisible(true);
+        
+        lab_Vgrupo.setVisible(false);
+        lab_Sgrupo.setVisible(true);
+        
+        DefaultListModel m = (DefaultListModel) jl_listaSV.getModel();
+        for (int i = 0; i < vengadores.size(); i++) {
+            m.addElement(vengadores.get(i).toString());
+        }
+        for (int i = 0; i < xmen.size(); i++) {
+            m.addElement(xmen.get(i).toString());
+        }
+        jl_listaSV.setModel(m);
+    }//GEN-LAST:event_jmi_listarSActionPerformed
+
+    private void jmi_listarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarVActionPerformed
+        jd_stanlee.setModal(false);
+        jd_stanlee.setVisible(false);
+        jd_listaSV.setModal(true);
+        jd_listaSV.pack();
+        jd_listaSV.setLocationRelativeTo(this);
+        jd_listaSV.setVisible(true);
+        
+        lab_Vgrupo.setVisible(true);
+        lab_Sgrupo.setVisible(false);
+        
+        DefaultListModel m = (DefaultListModel) jl_listaSV.getModel();
+        for (int i = 0; i < darkavenger.size(); i++) {
+            m.addElement(darkavenger.get(i).toString());
+        }
+        for (int i = 0; i < sinister.size(); i++) {
+            m.addElement(sinister.get(i).toString());
+        }
+        jl_listaSV.setModel(m);
+    }//GEN-LAST:event_jmi_listarVActionPerformed
+
+    private void btn_listavs_r_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_listavs_r_MouseClicked
+        jd_listaSV.setModal(false);
+        jd_listaSV.setVisible(false);
+        jd_stanlee.setModal(true);
+        jd_stanlee.pack();
+        jd_stanlee.setLocationRelativeTo(this);
+        jd_stanlee.setVisible(true);
+        
+        lab_Vgrupo.setVisible(false);
+        lab_Sgrupo.setVisible(false);
+        
+        DefaultListModel m = (DefaultListModel) jl_listaSV.getModel();
+        m.removeAllElements();
+        jl_listaSV.setModel(m);
+    }//GEN-LAST:event_btn_listavs_r_MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -645,6 +763,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_crear_;
     private javax.swing.JButton btn_crear_r_;
     private javax.swing.JButton btn_especial;
+    private javax.swing.JButton btn_listavs_r_;
     private javax.swing.JButton btn_login;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -669,11 +788,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JDialog jd_crearSP;
     private javax.swing.JDialog jd_crearSV;
+    private javax.swing.JDialog jd_listaSV;
     private javax.swing.JDialog jd_nosuper;
     private javax.swing.JDialog jd_novillano;
     private javax.swing.JDialog jd_stanlee;
+    private javax.swing.JList<String> jl_listaSV;
     private javax.swing.JList<String> jl_nosuper;
     private javax.swing.JList<String> jl_novillano;
     private javax.swing.JMenu jm_villano;
@@ -689,6 +811,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_listarV;
     private javax.swing.JSpinner js_pod;
     private javax.swing.JTree jt_arbol;
+    private javax.swing.JLabel lab_Sgrupo;
+    private javax.swing.JLabel lab_Vgrupo;
     private javax.swing.JLabel lab_s;
     private javax.swing.JLabel lab_v;
     private javax.swing.JMenu m_superheroe;
@@ -705,7 +829,7 @@ public class Principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     ArrayList<Superheroe> heroes = new ArrayList();
     ArrayList<Villano> villanos = new ArrayList();
-    ArrayList<Vengador> Vengadores = new ArrayList();
+    ArrayList<Vengador> vengadores = new ArrayList();
     ArrayList<XMen> xmen = new ArrayList();
     ArrayList<DarkAvenger> darkavenger = new ArrayList();
     ArrayList<SinisterSix> sinister = new ArrayList();
