@@ -1,6 +1,7 @@
 package lab.pkg5_alessandroreyes;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
@@ -92,6 +93,14 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jl_listaSV = new javax.swing.JList<>();
         btn_listavs_r_ = new javax.swing.JButton();
+        jd_atrapar = new javax.swing.JDialog();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jl_atrapar = new javax.swing.JList<>();
+        btn_atrapar_r_ = new javax.swing.JButton();
+        btn_atrapar = new javax.swing.JButton();
+        cb_heroe = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        jd_escapar = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tf_user = new javax.swing.JTextField();
@@ -162,6 +171,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jmi_listanov);
 
         jmi_atrapar.setText("Atrapar Villano");
+        jmi_atrapar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_atraparActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmi_atrapar);
 
         jmi_escape.setText("Escaparse de la carcel");
@@ -493,6 +507,66 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btn_listavs_r_))
         );
 
+        jl_atrapar.setModel(new DefaultListModel());
+        jScrollPane5.setViewportView(jl_atrapar);
+
+        btn_atrapar_r_.setText("Regresar");
+
+        btn_atrapar.setText("Atrapar villano");
+        btn_atrapar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_atraparMouseClicked(evt);
+            }
+        });
+
+        cb_heroe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+
+        jLabel13.setText("Seleccione el heroe que lo atrapara");
+
+        javax.swing.GroupLayout jd_atraparLayout = new javax.swing.GroupLayout(jd_atrapar.getContentPane());
+        jd_atrapar.getContentPane().setLayout(jd_atraparLayout);
+        jd_atraparLayout.setHorizontalGroup(
+            jd_atraparLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_atraparLayout.createSequentialGroup()
+                .addContainerGap(233, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(214, 214, 214))
+            .addGroup(jd_atraparLayout.createSequentialGroup()
+                .addGroup(jd_atraparLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_atraparLayout.createSequentialGroup()
+                        .addComponent(btn_atrapar_r_, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(241, 241, 241)
+                        .addComponent(btn_atrapar, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_heroe, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jd_atraparLayout.setVerticalGroup(
+            jd_atraparLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_atraparLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cb_heroe, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jd_atraparLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_atrapar_r_, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(btn_atrapar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jd_escaparLayout = new javax.swing.GroupLayout(jd_escapar.getContentPane());
+        jd_escapar.getContentPane().setLayout(jd_escaparLayout);
+        jd_escaparLayout.setHorizontalGroup(
+            jd_escaparLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_escaparLayout.setVerticalGroup(
+            jd_escaparLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -572,8 +646,11 @@ public class Principal extends javax.swing.JFrame {
         jd_crearSV.pack();
         jd_crearSV.setLocationRelativeTo(this);
         jd_crearSV.setVisible(true);
-        lab_s.setVisible(true);
+        
+        lab_s.setVisible(false);
+        tf_Cnum_.setVisible(false);
         lab_v.setVisible(false);
+        
         
     }//GEN-LAST:event_jmi_crearSActionPerformed
 
@@ -584,6 +661,7 @@ public class Principal extends javax.swing.JFrame {
         jd_crearSV.pack();
         jd_crearSV.setLocationRelativeTo(this);
         jd_crearSV.setVisible(true);
+        
         lab_s.setVisible(false);
         lab_v.setVisible(true);
     }//GEN-LAST:event_jmi_crearVActionPerformed
@@ -603,20 +681,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_crear_r_MouseClicked
 
     private void btn_crear_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crear_MouseClicked
-        if(lab_s.isVisible()){
-            heroes.add(new Superheroe(tf_Cnom_.getText(), tf_Corigen_.getText(), Integer.parseInt(tf_Cedad_.getText()),
-                    Integer.parseInt(tf_Caltura_.getText()), Integer.parseInt(tf_Cnum_.getText())));
-            JOptionPane.showMessageDialog(jd_crearSV, "Superheroe creador con exito.");
+        if(lab_v.isVisible()){
+            villanos.add(new Villano(tf_Cnom_.getText(), tf_Corigen_.getText(), Integer.parseInt(tf_Cedad_.getText()),
+                    Integer.parseInt(tf_Caltura_.getText()), Integer.parseInt(tf_Cnum_.getText()),false));
+            JOptionPane.showMessageDialog(jd_crearSV, "Villano creador con exito.");
             tf_Caltura_.setText("");
             tf_Cedad_.setText("");
             tf_Cnom_.setText("");
             tf_Cnum_.setText("");
             tf_Corigen_.setText("");
-            
         }else{
-            villanos.add(new Villano(tf_Cnom_.getText(), tf_Corigen_.getText(), Integer.parseInt(tf_Cedad_.getText()),
-                    Integer.parseInt(tf_Caltura_.getText()), Integer.parseInt(tf_Cnum_.getText()),false));
-            JOptionPane.showMessageDialog(jd_crearSV, "Villano creador con exito.");
+            heroes.add(new Superheroe(tf_Cnom_.getText(), tf_Corigen_.getText(), Integer.parseInt(tf_Cedad_.getText()),
+                    Integer.parseInt(tf_Caltura_.getText()), 0));
+            JOptionPane.showMessageDialog(jd_crearSV, "Superheroe creador con exito.");
             tf_Caltura_.setText("");
             tf_Cedad_.setText("");
             tf_Cnom_.setText("");
@@ -721,6 +798,95 @@ public class Principal extends javax.swing.JFrame {
         jl_listaSV.setModel(m);
     }//GEN-LAST:event_btn_listavs_r_MouseClicked
 
+    private void jmi_atraparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_atraparActionPerformed
+        jd_listaSV.setModal(false);
+        jd_listaSV.setVisible(false);
+        jd_stanlee.setModal(true);
+        jd_stanlee.pack();
+        jd_stanlee.setLocationRelativeTo(this);
+        jd_stanlee.setVisible(true);
+        
+        DefaultListModel m = (DefaultListModel) jl_listaSV.getModel();
+        for (int i = 0; i < darkavenger.size(); i++) {
+            m.addElement(darkavenger.get(i).toString());
+        }
+        for (int i = 0; i < sinister.size(); i++) {
+            m.addElement(sinister.get(i).toString());
+        }
+        jl_listaSV.setModel(m);
+        ArrayList<Villano> temp = new ArrayList();
+        for (int i = 0; i < darkavenger.size(); i++) {
+            temp.add(darkavenger.get(i));
+        }
+        for (int i = 0; i < sinister.size(); i++) {
+            temp.add(sinister.get(i));
+        }
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel(temp.toArray());
+        cb_heroe.setModel(modelo);
+    }//GEN-LAST:event_jmi_atraparActionPerformed
+
+    private void btn_atraparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_atraparMouseClicked
+        boolean ver = false;
+        boolean ver2 = false;
+        if(jl_atrapar.getSelectedIndex() >=0){
+            for (int i = 0; i < darkavenger.size(); i++) {
+                DefaultListModel m = (DefaultListModel) jl_listaSV.getModel();
+                if(m.getElementAt(jl_atrapar.getSelectedIndex()).equals(darkavenger.get(i))){
+                    darkavenger.get(i).setCarcel(true);
+                    for (int j = 0; j < vengadores.size(); j++) {
+                        if(vengadores.get(i).equals(cb_heroe.getSelectedItem())){
+                            vengadores.get(i).setVatrap(vengadores.get(i).getVatrap()+1);
+                            ver2=true;
+                            break;
+                        }
+                    }
+                    if (!ver2) {
+                        for (int j = 0; j < xmen.size(); j++) {
+                            if (xmen.get(i).equals(cb_heroe.getSelectedItem())) {
+                                xmen.get(i).setVatrap(xmen.get(i).getVatrap() + 1);
+                                ver2 = true;
+                                break;
+                            }
+                        }
+                    }
+                    jl_atrapar.remove(jl_atrapar.getSelectedIndex());
+                    JOptionPane.showMessageDialog(jd_atrapar, "Villano atrapado con exito.");
+                    ver = true;
+                    break;
+                }
+            }
+            if (!ver) {
+                for (int i = 0; i < sinister.size(); i++) {
+                    DefaultListModel m = (DefaultListModel) jl_listaSV.getModel();
+                    if (m.getElementAt(jl_atrapar.getSelectedIndex()).equals(sinister.get(i))) {
+                        sinister.get(i).setCarcel(true);
+                        for (int j = 0; j < vengadores.size(); j++) {
+                            if (vengadores.get(i).equals(cb_heroe.getSelectedItem())) {
+                                vengadores.get(i).setVatrap(vengadores.get(i).getVatrap() + 1);
+                                ver2 = true;
+                                break;
+                            }
+                        }
+                        if (!ver2) {
+                            for (int j = 0; j < xmen.size(); j++) {
+                                if (xmen.get(i).equals(cb_heroe.getSelectedItem())) {
+                                    xmen.get(i).setVatrap(xmen.get(i).getVatrap() + 1);
+                                    ver2 = true;
+                                    break;
+                                }
+                            }
+                        }
+                        jl_atrapar.remove(jl_atrapar.getSelectedIndex());
+                        JOptionPane.showMessageDialog(jd_atrapar, "Villano atrapado con exito.");
+                        ver = true;
+                        break;
+                    }
+                }
+            }
+        }else
+            JOptionPane.showMessageDialog(jd_atrapar, "Seleccione uno de la lista");
+    }//GEN-LAST:event_btn_atraparMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -760,11 +926,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bg_mortal;
     private javax.swing.JButton btn_CrearSP_;
     private javax.swing.JButton btn_CrearSP_r_;
+    private javax.swing.JButton btn_atrapar;
+    private javax.swing.JButton btn_atrapar_r_;
     private javax.swing.JButton btn_crear_;
     private javax.swing.JButton btn_crear_r_;
     private javax.swing.JButton btn_especial;
     private javax.swing.JButton btn_listavs_r_;
     private javax.swing.JButton btn_login;
+    private javax.swing.JComboBox<String> cb_heroe;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -775,6 +944,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -789,12 +959,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JDialog jd_atrapar;
     private javax.swing.JDialog jd_crearSP;
     private javax.swing.JDialog jd_crearSV;
+    private javax.swing.JDialog jd_escapar;
     private javax.swing.JDialog jd_listaSV;
     private javax.swing.JDialog jd_nosuper;
     private javax.swing.JDialog jd_novillano;
     private javax.swing.JDialog jd_stanlee;
+    private javax.swing.JList<String> jl_atrapar;
     private javax.swing.JList<String> jl_listaSV;
     private javax.swing.JList<String> jl_nosuper;
     private javax.swing.JList<String> jl_novillano;
