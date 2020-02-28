@@ -7,9 +7,6 @@ public class Superheroe {
     private String Nombre, Origen; 
     private int Edad, Altura,  vatrap;
 
-    public Superheroe() {
-    }
-
     public Superheroe(String Nombre, String Origen, int Edad, int Altura, int vatrap) {
         this.Nombre = Nombre;
         this.Origen = Origen;

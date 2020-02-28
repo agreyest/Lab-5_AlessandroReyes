@@ -53,14 +53,14 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jl_nosuper = new javax.swing.JList<>();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_grupoS_r = new javax.swing.JButton();
+        btn_grupoS = new javax.swing.JButton();
         jd_novillano = new javax.swing.JDialog();
         jScrollPane3 = new javax.swing.JScrollPane();
         jl_novillano = new javax.swing.JList<>();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btn_grupov_r = new javax.swing.JButton();
+        btn_grupov = new javax.swing.JButton();
         jd_crearSV = new javax.swing.JDialog();
         jLabel6 = new javax.swing.JLabel();
         tf_Cnom_ = new javax.swing.JTextField();
@@ -187,9 +187,19 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jmi_agregarp);
 
         jmi_listanos.setText("Lista superheroe sin grupo");
+        jmi_listanos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_listanosActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmi_listanos);
 
         jmi_listanov.setText("Lista de villanos sin grupo");
+        jmi_listanov.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_listanovActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmi_listanov);
 
         jmi_atrapar.setText("Atrapar Villano");
@@ -243,18 +253,28 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel4.setText("Superheroes sin grupo");
 
-        jButton1.setText("Regresar");
+        btn_grupoS_r.setText("Regresar");
+        btn_grupoS_r.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_grupoS_rMouseClicked(evt);
+            }
+        });
 
-        jButton2.setText("agregar a un grupo");
+        btn_grupoS.setText("agregar a un grupo");
+        btn_grupoS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_grupoSMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_nosuperLayout = new javax.swing.GroupLayout(jd_nosuper.getContentPane());
         jd_nosuper.getContentPane().setLayout(jd_nosuperLayout);
         jd_nosuperLayout.setHorizontalGroup(
             jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_nosuperLayout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(btn_grupoS_r)
                 .addGap(254, 254, 254)
-                .addComponent(jButton2)
+                .addComponent(btn_grupoS)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jd_nosuperLayout.createSequentialGroup()
                 .addGap(188, 188, 188)
@@ -272,8 +292,8 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)))
+                    .addComponent(btn_grupoS_r)
+                    .addComponent(btn_grupoS)))
         );
 
         jl_novillano.setModel(new DefaultListModel());
@@ -281,9 +301,19 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel5.setText("Villanos sin grupo");
 
-        jButton4.setText("Regresar");
+        btn_grupov_r.setText("Regresar");
+        btn_grupov_r.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_grupov_rMouseClicked(evt);
+            }
+        });
 
-        jButton5.setText("Agregar a un grupo");
+        btn_grupov.setText("Agregar a un grupo");
+        btn_grupov.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_grupovMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_novillanoLayout = new javax.swing.GroupLayout(jd_novillano.getContentPane());
         jd_novillano.getContentPane().setLayout(jd_novillanoLayout);
@@ -296,9 +326,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(237, Short.MAX_VALUE))
             .addGroup(jd_novillanoLayout.createSequentialGroup()
-                .addComponent(jButton4)
+                .addComponent(btn_grupov_r)
                 .addGap(276, 276, 276)
-                .addComponent(jButton5)
+                .addComponent(btn_grupov)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jd_novillanoLayout.setVerticalGroup(
@@ -310,8 +340,8 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(jd_novillanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)))
+                    .addComponent(btn_grupov_r)
+                    .addComponent(btn_grupov)))
         );
 
         jLabel6.setText("Nombre ");
@@ -1263,14 +1293,107 @@ public class Principal extends javax.swing.JFrame {
         m.removeAllElements();
         jl_superpoderes.setModel(m);
         
-        jd_stanlee.setModal(false);
-        jd_stanlee.setVisible(false);
-        jd_agregarp.setModal(true);
-        jd_agregarp.pack();
-        jd_agregarp.setLocationRelativeTo(this);
-        jd_agregarp.setVisible(true);
+        jd_agregarp.setModal(false);
+        jd_agregarp.setVisible(false);
+        jd_stanlee.setModal(true);
+        jd_stanlee.pack();
+        jd_stanlee.setLocationRelativeTo(this);
+        jd_stanlee.setVisible(true);
 
     }//GEN-LAST:event_btn_pod_rMouseClicked
+
+    private void jmi_listanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listanosActionPerformed
+        jd_stanlee.setModal(false);
+        jd_stanlee.setVisible(false);
+        jd_nosuper.setModal(true);
+        jd_nosuper.pack();
+        jd_nosuper.setLocationRelativeTo(this);
+        jd_nosuper.setVisible(true);
+        
+        DefaultListModel m = (DefaultListModel) jl_nosuper.getModel();
+        for (int i = 0; i < heroes.size(); i++) {
+            if(heroes.get(i).getPoderes().size() >=1)
+                m.addElement(heroes.get(i).toString());
+        }
+        jl_nosuper.setModel(m);
+    }//GEN-LAST:event_jmi_listanosActionPerformed
+
+    private void btn_grupoSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_grupoSMouseClicked
+        if (jl_nosuper.getSelectedIndex() >= 0) {
+            int num = Integer.parseInt(JOptionPane.showInputDialog("Elija un grupo \n1. vengadores \n2. xmen"));
+            int li = jl_nosuper.getSelectedIndex();
+            if (num == 1) {
+                vengadores.add(new Vengador(heroes.get(li).getNombre(), heroes.get(li).getOrigen(), heroes.get(li).getEdad(),
+                        heroes.get(li).getAltura(), heroes.get(li).getVatrap()));
+            } else if (num == 2) {
+                xmen.add(new XMen(heroes.get(li).getNombre(), heroes.get(li).getOrigen(), heroes.get(li).getEdad(),
+                        heroes.get(li).getAltura(), heroes.get(li).getVatrap()));
+            } else if (num != 1 && num != 2) {
+                JOptionPane.showMessageDialog(jd_nosuper, "Ese numero no es valido");
+            }
+        }
+    }//GEN-LAST:event_btn_grupoSMouseClicked
+
+    private void btn_grupoS_rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_grupoS_rMouseClicked
+        DefaultListModel m = (DefaultListModel) jl_nosuper.getModel();
+        m.removeAllElements();
+        jl_nosuper.setModel(m);
+        
+        jd_nosuper.setModal(false);
+        jd_nosuper.setVisible(false);
+        jd_stanlee.setModal(true);
+        jd_stanlee.pack();
+        jd_stanlee.setLocationRelativeTo(this);
+        jd_stanlee.setVisible(true);
+    }//GEN-LAST:event_btn_grupoS_rMouseClicked
+
+    private void jmi_listanovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listanovActionPerformed
+        jd_stanlee.setModal(false);
+        jd_stanlee.setVisible(false);
+        jd_novillano.setModal(true);
+        jd_novillano.pack();
+        jd_novillano.setLocationRelativeTo(this);
+        jd_novillano.setVisible(true);
+        
+        DefaultListModel m = (DefaultListModel) jl_novillano.getModel();
+        for (int i = 0; i < heroes.size(); i++) {
+            if(villanos.get(i).getPoderesv().size() > 0)
+                if(villanos.get(i).getPoderesv().size() >=2)
+                    m.addElement(villanos.get(i).toString());
+        }
+        jl_novillano.setModel(m);
+    }//GEN-LAST:event_jmi_listanovActionPerformed
+
+    private void btn_grupovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_grupovMouseClicked
+        if (jl_novillano.getSelectedIndex() >= 0) {
+            int num = Integer.parseInt(JOptionPane.showInputDialog("Elija un grupo \n1. dark avenger \n2. the Sinister six"));
+            int li = jl_novillano.getSelectedIndex();
+            if (num == 1) {
+                darkavenger.add(new DarkAvenger(darkavenger.get(li).getNombre(), darkavenger.get(li).getOrigen(),
+                        darkavenger.get(li).getEdad(), darkavenger.get(li).getAltura(), darkavenger.get(li).getMuertes(),
+                        darkavenger.get(li).isCarcel()));
+            } else if (num == 2) {
+                sinister.add(new SinisterSix(sinister.get(li).getNombre(), sinister.get(li).getOrigen(),
+                        sinister.get(li).getEdad(), sinister.get(li).getAltura(), sinister.get(li).getMuertes(),
+                        sinister.get(li).isCarcel()));
+            } else if (num != 1 && num != 2) {
+                JOptionPane.showMessageDialog(jd_novillano, "Ese numero no es valido");
+            }
+        }
+    }//GEN-LAST:event_btn_grupovMouseClicked
+
+    private void btn_grupov_rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_grupov_rMouseClicked
+        DefaultListModel m = (DefaultListModel) jl_novillano.getModel();
+        m.removeAllElements();
+        jl_novillano.setModel(m);
+        
+        jd_novillano.setModal(false);
+        jd_novillano.setVisible(false);
+        jd_stanlee.setModal(true);
+        jd_stanlee.pack();
+        jd_stanlee.setLocationRelativeTo(this);
+        jd_stanlee.setVisible(true);
+    }//GEN-LAST:event_btn_grupov_rMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1318,6 +1441,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_escapar;
     private javax.swing.JButton btn_escapar_r;
     private javax.swing.JButton btn_especial;
+    private javax.swing.JButton btn_grupoS;
+    private javax.swing.JButton btn_grupoS_r;
+    private javax.swing.JButton btn_grupov;
+    private javax.swing.JButton btn_grupov_r;
     private javax.swing.JButton btn_listavs_r_;
     private javax.swing.JButton btn_login;
     private javax.swing.JButton btn_podS;
@@ -1326,10 +1453,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_heroe;
     private javax.swing.JComboBox<String> cb_podS;
     private javax.swing.JComboBox<String> cb_podV;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
