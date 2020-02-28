@@ -1,9 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab.pkg5_alessandroreyes;
+
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,9 +10,6 @@ package lab.pkg5_alessandroreyes;
  */
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
     public Principal() {
         initComponents();
     }
@@ -27,21 +23,294 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_stanlee = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jt_arbol = new javax.swing.JTree();
+        btn_especial = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        m_superheroe = new javax.swing.JMenu();
+        jmi_crearS = new javax.swing.JMenuItem();
+        jmi_listarS = new javax.swing.JMenuItem();
+        jm_villano = new javax.swing.JMenu();
+        jmi_crearV = new javax.swing.JMenuItem();
+        jmi_listarV = new javax.swing.JMenuItem();
+        jmi_csuperpoder = new javax.swing.JMenuItem();
+        jmi_listanos = new javax.swing.JMenuItem();
+        jmi_listanov = new javax.swing.JMenuItem();
+        jmi_atrapar = new javax.swing.JMenuItem();
+        jmi_escape = new javax.swing.JMenuItem();
+        jmi_encarcelados = new javax.swing.JMenuItem();
+        jd_nosuper = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jl_nosuper = new javax.swing.JList<>();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jd_novillano = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_novillano = new javax.swing.JList<>();
+        jLabel5 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jd_crearS = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        tf_user = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        pf_pass = new javax.swing.JPasswordField();
+        btn_login = new javax.swing.JButton();
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jt_arbol.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jt_arbol);
+
+        btn_especial.setText("Boton especial");
+
+        jMenu1.setText("Acciones");
+
+        m_superheroe.setText("Superheroe");
+
+        jmi_crearS.setText("Crear");
+        m_superheroe.add(jmi_crearS);
+
+        jmi_listarS.setText("Listar");
+        m_superheroe.add(jmi_listarS);
+
+        jMenu1.add(m_superheroe);
+
+        jm_villano.setText("Villano");
+
+        jmi_crearV.setText("Crear");
+        jm_villano.add(jmi_crearV);
+
+        jmi_listarV.setText("Listar");
+        jm_villano.add(jmi_listarV);
+
+        jMenu1.add(jm_villano);
+
+        jmi_csuperpoder.setText("Crear superpoder");
+        jMenu1.add(jmi_csuperpoder);
+
+        jmi_listanos.setText("Lista superheroe sin grupo");
+        jMenu1.add(jmi_listanos);
+
+        jmi_listanov.setText("Lista de villanos sin grupo");
+        jMenu1.add(jmi_listanov);
+
+        jmi_atrapar.setText("Atrapar Villano");
+        jMenu1.add(jmi_atrapar);
+
+        jmi_escape.setText("Escaparse de la carcel");
+        jMenu1.add(jmi_escape);
+
+        jmi_encarcelados.setText("Encarcelados");
+        jMenu1.add(jmi_encarcelados);
+
+        jMenuBar1.add(jMenu1);
+
+        jd_stanlee.setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout jd_stanleeLayout = new javax.swing.GroupLayout(jd_stanlee.getContentPane());
+        jd_stanlee.getContentPane().setLayout(jd_stanleeLayout);
+        jd_stanleeLayout.setHorizontalGroup(
+            jd_stanleeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_stanleeLayout.createSequentialGroup()
+                .addGroup(jd_stanleeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_stanleeLayout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_stanleeLayout.createSequentialGroup()
+                        .addGap(328, 328, 328)
+                        .addComponent(btn_especial, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(223, Short.MAX_VALUE))
+        );
+        jd_stanleeLayout.setVerticalGroup(
+            jd_stanleeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_stanleeLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(btn_especial, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jl_nosuper.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(jl_nosuper);
+
+        jLabel4.setText("Superheroes sin grupo");
+
+        jButton1.setText("Regresar");
+
+        jButton2.setText("agregar a un grupo");
+
+        jButton3.setText("Agregar superpoder ");
+
+        javax.swing.GroupLayout jd_nosuperLayout = new javax.swing.GroupLayout(jd_nosuper.getContentPane());
+        jd_nosuper.getContentPane().setLayout(jd_nosuperLayout);
+        jd_nosuperLayout.setHorizontalGroup(
+            jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_nosuperLayout.createSequentialGroup()
+                .addComponent(jButton1)
+                .addGap(254, 254, 254)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                .addComponent(jButton3))
+            .addGroup(jd_nosuperLayout.createSequentialGroup()
+                .addGap(188, 188, 188)
+                .addGroup(jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_nosuperLayout.setVerticalGroup(
+            jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_nosuperLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addGroup(jd_nosuperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)))
+        );
+
+        jl_novillano.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jl_novillano);
+
+        jLabel5.setText("Villanos sin grupo");
+
+        jButton4.setText("Regresar");
+
+        jButton5.setText("Agregar a un grupo");
+
+        jButton6.setText("Darle superpoderes");
+
+        javax.swing.GroupLayout jd_novillanoLayout = new javax.swing.GroupLayout(jd_novillano.getContentPane());
+        jd_novillano.getContentPane().setLayout(jd_novillanoLayout);
+        jd_novillanoLayout.setHorizontalGroup(
+            jd_novillanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_novillanoLayout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addGroup(jd_novillanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jd_novillanoLayout.createSequentialGroup()
+                .addComponent(jButton4)
+                .addGap(276, 276, 276)
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                .addComponent(jButton6))
+        );
+        jd_novillanoLayout.setVerticalGroup(
+            jd_novillanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_novillanoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addGroup(jd_novillanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6)))
+        );
+
+        jLabel6.setText("Nombre ");
+
+        javax.swing.GroupLayout jd_crearSLayout = new javax.swing.GroupLayout(jd_crearS.getContentPane());
+        jd_crearS.getContentPane().setLayout(jd_crearSLayout);
+        jd_crearSLayout.setHorizontalGroup(
+            jd_crearSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearSLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel6)
+                .addContainerGap(726, Short.MAX_VALUE))
+        );
+        jd_crearSLayout.setVerticalGroup(
+            jd_crearSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearSLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel6)
+                .addContainerGap(475, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("Bienvenido Stan Lee");
+
+        jLabel2.setText("Usuario");
+
+        jLabel3.setText("Contraseña");
+
+        btn_login.setText("Log in");
+        btn_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_loginMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 735, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(323, 323, 323)
+                        .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(79, 79, 79)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_user, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
+        if (tf_user.getText().equals("stanlee") && pf_pass.getText().equals("spiderman99")) {
+            this.setVisible(false);
+            jd_stanlee.setModal(true);
+            jd_stanlee.pack();
+            jd_stanlee.setLocationRelativeTo(this);
+            jd_stanlee.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrecta.");
+            tf_user.setText("");
+            pf_pass.setText("");
+        }
+            
+    }//GEN-LAST:event_btn_loginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +348,52 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_especial;
+    private javax.swing.JButton btn_login;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JDialog jd_crearS;
+    private javax.swing.JDialog jd_nosuper;
+    private javax.swing.JDialog jd_novillano;
+    private javax.swing.JDialog jd_stanlee;
+    private javax.swing.JList<String> jl_nosuper;
+    private javax.swing.JList<String> jl_novillano;
+    private javax.swing.JMenu jm_villano;
+    private javax.swing.JMenuItem jmi_atrapar;
+    private javax.swing.JMenuItem jmi_crearS;
+    private javax.swing.JMenuItem jmi_crearV;
+    private javax.swing.JMenuItem jmi_csuperpoder;
+    private javax.swing.JMenuItem jmi_encarcelados;
+    private javax.swing.JMenuItem jmi_escape;
+    private javax.swing.JMenuItem jmi_listanos;
+    private javax.swing.JMenuItem jmi_listanov;
+    private javax.swing.JMenuItem jmi_listarS;
+    private javax.swing.JMenuItem jmi_listarV;
+    private javax.swing.JTree jt_arbol;
+    private javax.swing.JMenu m_superheroe;
+    private javax.swing.JPasswordField pf_pass;
+    private javax.swing.JTextField tf_user;
     // End of variables declaration//GEN-END:variables
+    ArrayList<Superheroe> heroes = new ArrayList();
+    ArrayList<Villano> villano = new ArrayList();
+    ArrayList<Vengador> Vengadores = new ArrayList();
+    ArrayList<XMen> xmen = new ArrayList();
+    ArrayList<DarkAvenger> darkavenger = new ArrayList();
+    ArrayList<SinisterSix> sinister = new ArrayList();
+    ArrayList<Superpoder> poderes = new ArrayList();
 }
