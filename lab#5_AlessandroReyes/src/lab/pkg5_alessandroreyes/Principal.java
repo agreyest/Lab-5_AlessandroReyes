@@ -5,6 +5,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -115,6 +117,17 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         jl_superpoderes = new javax.swing.JList<>();
         jLabel16 = new javax.swing.JLabel();
+        popm_super = new javax.swing.JPopupMenu();
+        op_eliS = new javax.swing.JMenuItem();
+        op_arbolS = new javax.swing.JMenuItem();
+        popm_vil = new javax.swing.JPopupMenu();
+        op_eliV = new javax.swing.JMenuItem();
+        op_arbolV = new javax.swing.JMenuItem();
+        jd_encarcelados = new javax.swing.JDialog();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jl_carcel = new javax.swing.JList<>();
+        jLabel17 = new javax.swing.JLabel();
+        btn_carcel_r = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tf_user = new javax.swing.JTextField();
@@ -122,7 +135,7 @@ public class Principal extends javax.swing.JFrame {
         pf_pass = new javax.swing.JPasswordField();
         btn_login = new javax.swing.JButton();
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Marvel");
         jt_arbol.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(jt_arbol);
 
@@ -219,6 +232,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jmi_escape);
 
         jmi_encarcelados.setText("Encarcelados");
+        jmi_encarcelados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_encarceladosActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmi_encarcelados);
 
         jMenuBar1.add(jMenu1);
@@ -730,6 +748,75 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btn_podS)))
         );
 
+        op_eliS.setText("Eliminarlo");
+        op_eliS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                op_eliSActionPerformed(evt);
+            }
+        });
+        popm_super.add(op_eliS);
+
+        op_arbolS.setText("Agregar al arbol");
+        op_arbolS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                op_arbolSActionPerformed(evt);
+            }
+        });
+        popm_super.add(op_arbolS);
+
+        op_eliV.setText("Eliminar villano");
+        op_eliV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                op_eliVActionPerformed(evt);
+            }
+        });
+        popm_vil.add(op_eliV);
+
+        op_arbolV.setText("agregar al arbol");
+        op_arbolV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                op_arbolVActionPerformed(evt);
+            }
+        });
+        popm_vil.add(op_arbolV);
+
+        jl_carcel.setModel(new DefaultListModel());
+        jScrollPane7.setViewportView(jl_carcel);
+
+        jLabel17.setText("Villanos en la carcel");
+
+        btn_carcel_r.setText("Regresar");
+        btn_carcel_r.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_carcel_rMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_encarceladosLayout = new javax.swing.GroupLayout(jd_encarcelados.getContentPane());
+        jd_encarcelados.getContentPane().setLayout(jd_encarceladosLayout);
+        jd_encarceladosLayout.setHorizontalGroup(
+            jd_encarceladosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_encarceladosLayout.createSequentialGroup()
+                .addGap(215, 215, 215)
+                .addGroup(jd_encarceladosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(218, Short.MAX_VALUE))
+            .addGroup(jd_encarceladosLayout.createSequentialGroup()
+                .addComponent(btn_carcel_r)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jd_encarceladosLayout.setVerticalGroup(
+            jd_encarceladosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_encarceladosLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(btn_carcel_r))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -811,8 +898,12 @@ public class Principal extends javax.swing.JFrame {
         jd_crearSV.setVisible(true);
         
         lab_s.setVisible(false);
+        lab_s.setEnabled(false);
         tf_Cnum_.setVisible(false);
+        tf_Cnum_.setEnabled(false);
         lab_v.setVisible(false);
+        lab_v.setEnabled(false);
+        
         
         
     }//GEN-LAST:event_jmi_crearSActionPerformed
@@ -826,6 +917,7 @@ public class Principal extends javax.swing.JFrame {
         jd_crearSV.setVisible(true);
         
         lab_s.setVisible(false);
+        lab_s.setEnabled(false);
         lab_v.setVisible(true);
     }//GEN-LAST:event_jmi_crearVActionPerformed
 
@@ -912,14 +1004,22 @@ public class Principal extends javax.swing.JFrame {
         jd_listaSV.setVisible(true);
         
         lab_Vgrupo.setVisible(false);
+        lab_Vgrupo.setEnabled(false);
         lab_Sgrupo.setVisible(true);
         
         DefaultListModel m = (DefaultListModel) jl_listaSV.getModel();
         for (int i = 0; i < vengadores.size(); i++) {
-            m.addElement(vengadores.get(i).toString());
+            for (int j = heroesarb.size(); j < 10; j++) {
+                if(vengadores.get(i).equals(heroesarb.get(j)))
+                    m.addElement(vengadores.get(i).toString());
+            }
+            
         }
         for (int i = 0; i < xmen.size(); i++) {
-            m.addElement(xmen.get(i).toString());
+            for (int j = heroesarb.size(); j < 10; j++) {
+                if(xmen.get(i).equals(heroesarb.get(j)))
+                    m.addElement(xmen.get(i).toString());
+            }
         }
         jl_listaSV.setModel(m);
     }//GEN-LAST:event_jmi_listarSActionPerformed
@@ -934,13 +1034,20 @@ public class Principal extends javax.swing.JFrame {
         
         lab_Vgrupo.setVisible(true);
         lab_Sgrupo.setVisible(false);
+        lab_Sgrupo.setEnabled(false);
         
         DefaultListModel m = (DefaultListModel) jl_listaSV.getModel();
         for (int i = 0; i < darkavenger.size(); i++) {
-            m.addElement(darkavenger.get(i).toString());
+            for (int j = villanosarb.size(); j < 10; j++) {
+                if(darkavenger.get(i).equals(villanosarb.get(j)))
+                    m.addElement(darkavenger.get(i).toString());
+            }
         }
         for (int i = 0; i < sinister.size(); i++) {
-            m.addElement(sinister.get(i).toString());
+            for (int j = villanosarb.size(); j < 10; j++) {
+                if(sinister.get(i).equals(villanosarb.get(j)))
+                    m.addElement(sinister.get(i).toString());
+            }
         }
         jl_listaSV.setModel(m);
     }//GEN-LAST:event_jmi_listarVActionPerformed
@@ -980,12 +1087,12 @@ public class Principal extends javax.swing.JFrame {
         }
         jl_atrapar.setModel(m);
         
-        ArrayList<Villano> temp = new ArrayList();
-        for (int i = 0; i < darkavenger.size(); i++) {
-            temp.add(darkavenger.get(i));
+        ArrayList<Superheroe> temp = new ArrayList();
+        for (int i = 0; i < vengadores.size(); i++) {
+            temp.add(vengadores.get(i));
         }
-        for (int i = 0; i < sinister.size(); i++) {
-            temp.add(sinister.get(i));
+        for (int i = 0; i < xmen.size(); i++) {
+            temp.add(xmen.get(i));
         }
         DefaultComboBoxModel modelo = new DefaultComboBoxModel(temp.toArray());
         cb_heroe.setModel(modelo);
@@ -1004,16 +1111,16 @@ public class Principal extends javax.swing.JFrame {
                 if(temp2.equals(darkavenger.get(i))){
                     darkavenger.get(i).setCarcel(true);
                     for (int j = 0; j < vengadores.size(); j++) {
-                        if(vengadores.get(i).equals(temp)){
-                            vengadores.get(i).setVatrap(vengadores.get(i).getVatrap()+1);
+                        if(vengadores.get(j).equals(temp)){
+                            vengadores.get(j).setVatrap(vengadores.get(j).getVatrap()+1);
                             ver2=true;
                             break;
                         }
                     }
                     if (!ver2) {
                         for (int j = 0; j < xmen.size(); j++) {
-                            if (xmen.get(i).equals(temp)) {
-                                xmen.get(i).setVatrap(xmen.get(i).getVatrap() + 1);
+                            if (xmen.get(j).equals(temp)) {
+                                xmen.get(j).setVatrap(xmen.get(i).getVatrap() + 1);
                                 ver2 = true;
                                 break;
                             }
@@ -1395,6 +1502,414 @@ public class Principal extends javax.swing.JFrame {
         jd_stanlee.setVisible(true);
     }//GEN-LAST:event_btn_grupov_rMouseClicked
 
+    private void op_eliSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_eliSActionPerformed
+        boolean ver2 = false;
+        if (lab_Sgrupo.isVisible()) {
+            if (jl_listaSV.getSelectedIndex() >= 0) {
+                DefaultListModel modeloLISTA = (DefaultListModel) jl_listaSV.getModel();
+                Superheroe temp2 = (Superheroe) modeloLISTA.getElementAt(jl_listaSV.getSelectedIndex());
+                for (int i = 0; i < vengadores.size(); i++) {
+                    if (vengadores.get(i).equals(temp2)) {
+                        vengadores.remove(i);
+                        ver2 = true;
+                        break;
+                    }
+                }
+                if (!ver2) {
+                    for (int i = 0; i < xmen.size(); i++) {
+                        if (xmen.get(i).equals(temp2)) {
+                            xmen.remove(i);
+                            ver2 = true;
+                            break;
+                        }
+                    }
+                }
+
+                modeloLISTA.remove(jl_listaSV.getSelectedIndex());
+                jl_listaSV.setModel(modeloLISTA);
+            }
+        }
+    }//GEN-LAST:event_op_eliSActionPerformed
+
+    private void op_eliVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_eliVActionPerformed
+        boolean ver2 = false;
+        if (lab_Vgrupo.isVisible()) {
+            if (jl_listaSV.getSelectedIndex() >= 0) {
+                DefaultListModel modeloLISTA = (DefaultListModel) jl_listaSV.getModel();
+                Villano temp2 = (Villano) modeloLISTA.getElementAt(jl_listaSV.getSelectedIndex());
+                for (int i = 0; i < darkavenger.size(); i++) {
+                    if (darkavenger.get(i).equals(temp2)) {
+                        darkavenger.remove(i);
+                        ver2 = true;
+                        break;
+                    }
+                }
+                if (!ver2) {
+                    for (int i = 0; i < sinister.size(); i++) {
+                        if (sinister.get(i).equals(temp2)) {
+                            sinister.remove(i);
+                            ver2 = true;
+                            break;
+                        }
+                    }
+                }
+
+                modeloLISTA.remove(jl_listaSV.getSelectedIndex());
+                jl_listaSV.setModel(modeloLISTA);
+            }
+        }
+    }//GEN-LAST:event_op_eliVActionPerformed
+
+    private void op_arbolSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_arbolSActionPerformed
+        if (jl_listaSV.getSelectedIndex() >= 0) {
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) jt_arbol.getModel();
+            DefaultMutableTreeNode raiz
+                    = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            //obtener la persona a guardar
+            DefaultListModel modeloLISTA
+                    = (DefaultListModel) jl_listaSV.getModel();
+            
+            boolean ver2=false;
+            int av = 0;
+            Superheroe temp2 = (Superheroe) modeloLISTA.getElementAt(jl_listaSV.getSelectedIndex());
+                for (int i = 0; i < vengadores.size(); i++) {
+                    if (vengadores.get(i).equals(temp2)) {
+                        av=1;
+                        ver2 = true;
+                        heroesarb.add(vengadores.get(i));
+                        break;
+                    }
+                }
+                if (!ver2) {
+                    for (int i = 0; i < xmen.size(); i++) {
+                        if (xmen.get(i).equals(temp2)) {
+                            av=2;
+                            ver2 = true;
+                            heroesarb.add(xmen.get(i));
+                            break;
+                        }
+                    }
+                }
+            
+            String origen, nombre;
+            int edad, num, altura;
+            origen
+                    = ((Superheroe) modeloLISTA.get(
+                            jl_listaSV.getSelectedIndex())).getOrigen();
+            nombre
+                    = ((Superheroe) modeloLISTA.get(
+                            jl_listaSV.getSelectedIndex())).getNombre();
+            edad = ((Superheroe) modeloLISTA.get(
+                    jl_listaSV.getSelectedIndex())).getEdad();
+            num = ((Superheroe) modeloLISTA.get(
+                    jl_listaSV.getSelectedIndex())).getVatrap();
+            altura = ((Superheroe) modeloLISTA.get(
+                    jl_listaSV.getSelectedIndex())).getAltura();
+            int centinela = -1;
+            boolean a = false;
+            boolean sub = false;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals("Superheroes")) {
+                    for (int j = 0; j < raiz.getChildAt(i).getChildCount(); j++) {
+                        if (raiz.getChildAt(i).getChildAt(j).toString().equals("Vengadores")) {
+                            for (int k = 0; k < raiz.getChildAt(i).getChildAt(j).getChildCount(); k++) {
+                                if (raiz.getChildAt(i).getChildAt(j).getChildAt(k).toString().equals(nombre)) {
+                                    a = true;
+                                    JOptionPane.showMessageDialog(this, "la persona ya existe");
+                                    break;
+                                } else if (j == raiz.getChildAt(i).getChildAt(j).getChildCount() - 1
+                                        && !raiz.getChildAt(i).getChildAt(j).getChildAt(k).toString().equals(nombre)) {
+                                    a = true;
+                                    DefaultMutableTreeNode p
+                                            = new DefaultMutableTreeNode(
+                                                    new Vengador(nombre, origen, edad,altura, num));
+                                    ((DefaultMutableTreeNode) raiz.getChildAt(i).getChildAt(j)).add(p);
+                                    break;
+                                }//fin del elseif
+                            }
+                        }else if(raiz.getChildAt(i).getChildAt(j).toString().equals("X-men")){
+                            for (int k = 0; k < raiz.getChildAt(i).getChildAt(j).getChildCount(); k++) {
+                                if (raiz.getChildAt(i).getChildAt(j).getChildAt(k).toString().equals(nombre)) {
+                                    a = true;
+                                    JOptionPane.showMessageDialog(this, "la persona ya existe");
+                                    break;
+                                } else if (j == raiz.getChildAt(i).getChildAt(j).getChildCount() - 1
+                                        && !raiz.getChildAt(i).getChildAt(j).getChildAt(k).toString().equals(nombre)) {
+                                    a = true;
+                                    DefaultMutableTreeNode p
+                                            = new DefaultMutableTreeNode(
+                                                    new XMen(nombre, origen, edad,altura, num));
+                                    ((DefaultMutableTreeNode) raiz.getChildAt(i).getChildAt(j)).add(p);
+                                    break;
+                                }//fin del elseif
+                            }
+                        }
+                        else{
+                            sub =true;
+                            break;
+                        }
+                    }//fin del for2
+                    if (a == true) {
+                        centinela = 1;
+                    }
+                }//fin if
+            }//fin for1
+            if (centinela == -1 && a) {
+                int x =0;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (((DefaultMutableTreeNode) raiz.getChildAt(i)).toString().equals("Superheroes")) {
+                        x = i;
+                    }
+                }
+                
+                DefaultMutableTreeNode t
+                        = new DefaultMutableTreeNode();
+                DefaultMutableTreeNode p
+                        = new DefaultMutableTreeNode();
+                
+                if(av==1){
+                    t
+                        = new DefaultMutableTreeNode("Vengadores");
+                    p
+                        = new DefaultMutableTreeNode(
+                                new Vengador(nombre, origen, edad, altura, num));
+                }else if(av == 2){
+                    t
+                        = new DefaultMutableTreeNode("X-Men");
+                    p
+                        = new DefaultMutableTreeNode(
+                                new XMen(nombre, origen, edad, altura, num));
+                }
+                t.add(p);
+               ((DefaultMutableTreeNode) raiz.getChildAt(x)).add(t);
+                
+            }//fin if
+            else if (centinela == -1) {
+                DefaultMutableTreeNode t
+                        = new DefaultMutableTreeNode();
+                DefaultMutableTreeNode p
+                        = new DefaultMutableTreeNode();
+                DefaultMutableTreeNode n
+                        = new DefaultMutableTreeNode("Superheroes");
+                if(av==1){
+                    t
+                        = new DefaultMutableTreeNode("Vengadores");
+                    p
+                        = new DefaultMutableTreeNode(
+                                new Vengador(nombre, origen, edad, altura, num));
+                }else if(av == 2){
+                    t
+                        = new DefaultMutableTreeNode("X-Men");
+                    p
+                        = new DefaultMutableTreeNode(
+                                new XMen(nombre, origen, edad, altura, num));
+                }
+                
+                n.add(t);
+                t.add(p);
+                raiz.add(n);
+            }//fin if
+            
+            modeloARBOL.reload();
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay persona seleccionada");
+        }
+    }//GEN-LAST:event_op_arbolSActionPerformed
+
+    private void op_arbolVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_arbolVActionPerformed
+        if (jl_listaSV.getSelectedIndex() >= 0) {
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) jt_arbol.getModel();
+            DefaultMutableTreeNode raiz
+                    = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            //obtener la persona a guardar
+            DefaultListModel modeloLISTA
+                    = (DefaultListModel) jl_listaSV.getModel();
+            
+            boolean ver2=false;
+            int av = 0;
+            Villano temp2 = (Villano) modeloLISTA.getElementAt(jl_listaSV.getSelectedIndex());
+                for (int i = 0; i < darkavenger.size(); i++) {
+                    if (darkavenger.get(i).equals(temp2)) {
+                        av=1;
+                        villanosarb.add(darkavenger.get(i));
+                        ver2 = true;
+                        break;
+                    }
+                }
+                if (!ver2) {
+                    for (int i = 0; i < sinister.size(); i++) {
+                        if (sinister.get(i).equals(temp2)) {
+                            av=2;
+                            villanosarb.add(sinister.get(i));
+                            ver2 = true;
+                            break;
+                        }
+                    }
+                }
+            
+            String origen, nombre;
+            int edad, num, altura;
+            boolean b;
+            origen
+                    = ((Villano) modeloLISTA.get(
+                            jl_listaSV.getSelectedIndex())).getOrigen();
+            nombre
+                    = ((Villano) modeloLISTA.get(
+                            jl_listaSV.getSelectedIndex())).getNombre();
+            edad = ((Villano) modeloLISTA.get(
+                    jl_listaSV.getSelectedIndex())).getEdad();
+            num = ((Villano) modeloLISTA.get(
+                    jl_listaSV.getSelectedIndex())).getMuertes();
+            altura = ((Villano) modeloLISTA.get(
+                    jl_listaSV.getSelectedIndex())).getAltura();
+            b = ((Villano) modeloLISTA.get(
+                    jl_listaSV.getSelectedIndex())).isCarcel();
+            int centinela = -1;
+            boolean a = false;
+            boolean sub = false;
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals("Villanos")) {
+                    for (int j = 0; j < raiz.getChildAt(i).getChildCount(); j++) {
+                        if (raiz.getChildAt(i).getChildAt(j).toString().equals("Dark Avengers")) {
+                            for (int k = 0; k < raiz.getChildAt(i).getChildAt(j).getChildCount(); k++) {
+                                if (raiz.getChildAt(i).getChildAt(j).getChildAt(k).toString().equals(nombre)) {
+                                    a = true;
+                                    JOptionPane.showMessageDialog(this, "la persona ya existe");
+                                    break;
+                                } else if (j == raiz.getChildAt(i).getChildAt(j).getChildCount() - 1
+                                        && !raiz.getChildAt(i).getChildAt(j).getChildAt(k).toString().equals(nombre)) {
+                                    a = true;
+                                    DefaultMutableTreeNode p
+                                            = new DefaultMutableTreeNode(
+                                                    new DarkAvenger(nombre, origen, edad,altura, num, b));
+                                    ((DefaultMutableTreeNode) raiz.getChildAt(i).getChildAt(j)).add(p);
+                                    break;
+                                }//fin del elseif
+                            }
+                        }else if(raiz.getChildAt(i).getChildAt(j).toString().equals("The sinister six")){
+                            for (int k = 0; k < raiz.getChildAt(i).getChildAt(j).getChildCount(); k++) {
+                                if (raiz.getChildAt(i).getChildAt(j).getChildAt(k).toString().equals(nombre)) {
+                                    a = true;
+                                    JOptionPane.showMessageDialog(this, "la persona ya existe");
+                                    break;
+                                } else if (j == raiz.getChildAt(i).getChildAt(j).getChildCount() - 1
+                                        && !raiz.getChildAt(i).getChildAt(j).getChildAt(k).toString().equals(nombre)) {
+                                    a = true;
+                                    DefaultMutableTreeNode p
+                                            = new DefaultMutableTreeNode(
+                                                    new SinisterSix(nombre, origen, edad,altura, num,b));
+                                    ((DefaultMutableTreeNode) raiz.getChildAt(i).getChildAt(j)).add(p);
+                                    break;
+                                }//fin del elseif
+                            }
+                        }
+                        else{
+                            sub =true;
+                            break;
+                        }
+                    }//fin del for2
+                    if (a == true) {
+                        centinela = 1;
+                    }
+                }//fin if
+            }//fin for1
+            if (centinela == -1 && a) {
+                int x =0;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (((DefaultMutableTreeNode) raiz.getChildAt(i)).toString().equals("Villanos")) {
+                        x = i;
+                    }
+                }
+                
+                DefaultMutableTreeNode t
+                        = new DefaultMutableTreeNode();
+                DefaultMutableTreeNode p
+                        = new DefaultMutableTreeNode();
+                
+                if(av==1){
+                    t
+                        = new DefaultMutableTreeNode("Dark Avengers");
+                    p
+                        = new DefaultMutableTreeNode(
+                                new Vengador(nombre, origen, edad, altura, num));
+                }else if(av == 2){
+                    t
+                        = new DefaultMutableTreeNode("The sinister six");
+                    p
+                        = new DefaultMutableTreeNode(
+                                new XMen(nombre, origen, edad, altura, num));
+                }
+                t.add(p);
+               ((DefaultMutableTreeNode) raiz.getChildAt(x)).add(t);
+                
+            }//fin if
+            else if (centinela == -1) {
+                DefaultMutableTreeNode t
+                        = new DefaultMutableTreeNode();
+                DefaultMutableTreeNode p
+                        = new DefaultMutableTreeNode();
+                DefaultMutableTreeNode n
+                        = new DefaultMutableTreeNode("Villanos");
+                if(av==1){
+                    t
+                        = new DefaultMutableTreeNode("Dark Avengers");
+                    p
+                        = new DefaultMutableTreeNode(
+                                new Vengador(nombre, origen, edad, altura, num));
+                }else if(av == 2){
+                    t
+                        = new DefaultMutableTreeNode("The sinister six");
+                    p
+                        = new DefaultMutableTreeNode(
+                                new XMen(nombre, origen, edad, altura, num));
+                }
+                
+                n.add(t);
+                t.add(p);
+                raiz.add(n);
+            }//fin if
+            
+            modeloARBOL.reload();
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay persona seleccionada");
+        }
+        
+        
+    }//GEN-LAST:event_op_arbolVActionPerformed
+
+    private void jmi_encarceladosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_encarceladosActionPerformed
+        jd_stanlee.setModal(false);
+        jd_stanlee.setVisible(false);
+        jd_encarcelados.setModal(true);
+        jd_encarcelados.pack();
+        jd_encarcelados.setLocationRelativeTo(this);
+        jd_encarcelados.setVisible(true);
+        
+        DefaultListModel m = (DefaultListModel) jl_carcel.getModel();
+        for (int i = 0; i < darkavenger.size(); i++) {
+            if(darkavenger.get(i).isCarcel())
+                m.addElement(darkavenger.get(i).toString());
+        }
+        for (int i = 0; i < sinister.size(); i++) {
+            if(sinister.get(i).isCarcel())
+                m.addElement(sinister.get(i).toString());
+        }
+        jl_carcel.setModel(m);
+    }//GEN-LAST:event_jmi_encarceladosActionPerformed
+
+    private void btn_carcel_rMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_carcel_rMouseClicked
+        jd_encarcelados.setModal(false);
+        jd_encarcelados.setVisible(false);
+        jd_stanlee.setModal(true);
+        jd_stanlee.pack();
+        jd_stanlee.setLocationRelativeTo(this);
+        jd_stanlee.setVisible(true);
+        
+        DefaultListModel m = (DefaultListModel) jl_carcel.getModel();
+        m.removeAllElements();
+        jl_carcel.setModel(m);
+    }//GEN-LAST:event_btn_carcel_rMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1436,6 +1951,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_CrearSP_r_;
     private javax.swing.JButton btn_atrapar;
     private javax.swing.JButton btn_atrapar_r_;
+    private javax.swing.JButton btn_carcel_r;
     private javax.swing.JButton btn_crear_;
     private javax.swing.JButton btn_crear_r_;
     private javax.swing.JButton btn_escapar;
@@ -1461,6 +1977,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1477,17 +1994,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JDialog jd_agregarp;
     private javax.swing.JDialog jd_atrapar;
     private javax.swing.JDialog jd_crearSP;
     private javax.swing.JDialog jd_crearSV;
+    private javax.swing.JDialog jd_encarcelados;
     private javax.swing.JDialog jd_escapar;
     private javax.swing.JDialog jd_listaSV;
     private javax.swing.JDialog jd_nosuper;
     private javax.swing.JDialog jd_novillano;
     private javax.swing.JDialog jd_stanlee;
     private javax.swing.JList<String> jl_atrapar;
+    private javax.swing.JList<String> jl_carcel;
     private javax.swing.JList<String> jl_escapar;
     private javax.swing.JList<String> jl_listaSV;
     private javax.swing.JList<String> jl_nosuper;
@@ -1512,7 +2032,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel lab_s;
     private javax.swing.JLabel lab_v;
     private javax.swing.JMenu m_superheroe;
+    private javax.swing.JMenuItem op_arbolS;
+    private javax.swing.JMenuItem op_arbolV;
+    private javax.swing.JMenuItem op_eliS;
+    private javax.swing.JMenuItem op_eliV;
     private javax.swing.JPasswordField pf_pass;
+    private javax.swing.JPopupMenu popm_super;
+    private javax.swing.JPopupMenu popm_vil;
     private javax.swing.JRadioButton rb_mno_;
     private javax.swing.JRadioButton rb_msi_;
     private javax.swing.JTextField tf_Caltura_;
@@ -1530,4 +2056,7 @@ public class Principal extends javax.swing.JFrame {
     ArrayList<DarkAvenger> darkavenger = new ArrayList();
     ArrayList<SinisterSix> sinister = new ArrayList();
     ArrayList<Superpoder> poderes = new ArrayList();
+    
+    ArrayList<Superheroe> heroesarb = new ArrayList();
+    ArrayList<Villano> villanosarb = new ArrayList();
 }
