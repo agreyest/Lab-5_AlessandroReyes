@@ -35,7 +35,6 @@ public class Principal extends javax.swing.JFrame {
         jd_stanlee = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_arbol = new javax.swing.JTree();
-        btn_especial = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         m_superheroe = new javax.swing.JMenu();
@@ -138,8 +137,6 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Marvel");
         jt_arbol.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(jt_arbol);
-
-        btn_especial.setText("Boton especial");
 
         jMenu1.setText("Acciones");
 
@@ -248,13 +245,8 @@ public class Principal extends javax.swing.JFrame {
         jd_stanleeLayout.setHorizontalGroup(
             jd_stanleeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_stanleeLayout.createSequentialGroup()
-                .addGroup(jd_stanleeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_stanleeLayout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_stanleeLayout.createSequentialGroup()
-                        .addGap(328, 328, 328)
-                        .addComponent(btn_especial, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(204, 204, 204)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(223, Short.MAX_VALUE))
         );
         jd_stanleeLayout.setVerticalGroup(
@@ -262,8 +254,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jd_stanleeLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(btn_especial, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         jl_nosuper.setModel(new DefaultListModel());
@@ -1956,7 +1947,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_crear_r_;
     private javax.swing.JButton btn_escapar;
     private javax.swing.JButton btn_escapar_r;
-    private javax.swing.JButton btn_especial;
     private javax.swing.JButton btn_grupoS;
     private javax.swing.JButton btn_grupoS_r;
     private javax.swing.JButton btn_grupov;
